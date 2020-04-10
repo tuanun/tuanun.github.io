@@ -47,6 +47,30 @@
           	margin-top: 2000px;
           	background-color: black;
           }
+          .bunnylaster{
+          	width: 30px;
+          	float: left;
+          	margin-left: 30px;
+          }
+
+          .laster{
+          	width: 100%;
+          	top: -100%;
+          	position: absolute;
+          }
+          .laster:after {
+          	content: "";
+          	width: 100%;
+          	position: absolute;
+          	top: 0px;
+          }
+          .laster.open{
+          	content: "";
+          	width: 100%;
+          	position: absolute;
+          	top: 0px;
+          }
+
 	</style>
 </head>
 <body>
@@ -68,6 +92,30 @@
     <p class="history">После всех раздумий я понял что идея хорошая и нужно браться за дело.</p>
     <img class="i" src="Images/i5.jpg">
     <p class="history">Так мне и пришла идея сделать маленькую игру. Всё осталось это опуститься ещё ниже по страние и дальше следовть инструкции.</p>
-    <div class="big" ><img style="width: 100%; margin-bottom: 100%; position: absolute;" src="Images/i1.jpg"></div>
+    <div class="big" ><img class="laster" src="Images/i1.jpg"></div>
+    <img class="bunnylaster"  src="Images/bunny.png" onclick="toggleMenu();">
+
+
+
+    <script type="text/javascript">
+	let menu = document.getElementsByClassName('menu')[0];
+	function toggleMenu() {
+		if (menu.className === "menu") {
+			menu.className += " open";
+		} 
+		else {
+			menu.className = "menu";
+		}
+	}
+let animblock = document.animationblock('stop')[0];
+	function animstart() {
+		if (animblock.className === "stop") {
+			animblock.className += "open";
+		}
+		else {
+			animblock.className = "stop" ;
+		}
+	}
+</script>
 </body>
 </html>
